@@ -1,0 +1,1 @@
+Navbar color: #333333
