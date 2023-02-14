@@ -5,7 +5,7 @@ import imgPortfolio from '../../img/img-portfolio.png'
 
 const About = () => {
   return (
-    <section className="flex h-[100vh] items-center justify-center py-[1em] px-[3.5em] gap-[3em]">
+    <section className="flex h-[100vh] items-center justify-center py-[2em] px-[3.5em] gap-[3em] border-[#ffffffa0] border-b-2">
       <div className="flex flex-col">
         {/*Texto sobre*/}
         <article className="flex flex-col font-rubik gap-4">
@@ -22,6 +22,7 @@ const About = () => {
             criativa. 
           </p>
         </article>
+        <button id='btn-contact' className="mt-10 self-start font-bold border border-cyan-400 rounded px-6 py-3 shadow-[0_0_5px_#00000062] bg-clip-text text-transparent bg-gradient-to-r from-black to-transparent hover:from-transparent hover:to-black hover:bg-gradient-to-l hover:bg-clip-text hover:scale-[1.01] transition-all ease-in-out duration-300">Entre em contato</button>
       </div>
       {/*Imagem do portfolio*/}
       <img className="max-w-[350px]" src={imgPortfolio} alt="Imagem do portfólio" />
