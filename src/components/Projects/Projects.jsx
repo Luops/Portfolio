@@ -20,7 +20,7 @@ const Projects = () => {
 
   return (
     <section className="w-[100%] flex flex-col items-center justify-center py-[3em] border-[#ffffffa0] border-b-2">
-      <h2 className="pl-[2.5em] self-start font-rubik text-2xl text-black opacity-50 drop-shadow-2xl">
+      <h2 className="pl-[3.5em] self-start font-rubik text-2xl text-[#1F5063] drop-shadow-2xl">
         Meus Projetos
       </h2>
       <div className="w-[100%] flex flex-col items-center justify-center py-[2em]">
@@ -28,11 +28,11 @@ const Projects = () => {
             {/* Componente de detalhes do projeto*/}
             {selectedProject && ( 
             <div>
-                <p className="text-white">{selectedProject.description}</p>
+                <p className="text-white">{selectedProject.title}</p>
             </div>
             )}
         </div>
-        {/*Swiper slide*/}
+        {/*Swiper slide para as opções de projetos*/}
         <Slide setSelectedProject={setSelectedProject} />
       </div>
     </section>

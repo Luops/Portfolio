@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-
+// Data
+import { about } from "../../data/data";
 
 // Images
 import imgPortfolio from "../../img/img-portfolio.png";
@@ -16,7 +17,7 @@ const About = () => {
   const [repos, setRepos] = useState([]); // Dados dos repositórios
   const [commitCount, setCommitCount] = useState(0); // Contador de commits
 
-  axios.defaults.headers.common['User-Agent'] = 'portfolio';
+  axios.defaults.headers.common["User-Agent"] = "portfolio"; // Ativar requisições com a API
 
   // Integração com a API do Github
   useEffect(() => {
@@ -24,7 +25,7 @@ const About = () => {
       axios
         .get(`https://api.github.com/users/Luops/repos`, {
           headers: {
-            Authorization: `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`
+            Authorization: `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`,
           },
         })
         .then((response) => {
@@ -67,22 +68,21 @@ const About = () => {
   console.log(commitCount);
 
   return (
-    <section className="flex h-[100vh] items-center justify-center py-[2em] px-[3.5em] gap-[3em] border-[#ffffffa0] border-b-2">
-      <div className="flex flex-col gap-5">
+    <section className="flex h-[100vh] items-center justify-evenly py-[2em] border-[#ffffffa0] border-b-2">
+      <div className="relative z-[1] flex flex-col gap-5">
         {/*Texto sobre*/}
         <article className="flex flex-col font-rubik gap-4">
           <h3 className="text-base text-black opacity-50 drop-shadow-2xl">
             Olá, sou o
           </h3>
-          <h3 className="text-5xl drop-shadow-2xl">Fabrício Lopes</h3>
-          <p className="text-black opacity-50 text-base font-inder max-w-[550px] text-justify">
-            Sou desenvolvedor Web, especializado em desenvolvimento front-end.
-            Como desenvolvedor front-end junior, tenho experiência na criação de
-            projetos utilizando Reactjs e tailwindCSS, e atualmente meu
-            portfólio é composto apenas por projetos pessoais. Esses projetos
-            demonstram minha capacidade de trabalhar de forma independente e
-            criativa.
-          </p>
+          <h3 className="text-5xl drop-shadow-2xl">
+            Fabrício Lopes
+          </h3>
+          {about.map((About) => (
+            <p className="text-black opacity-50 text-base font-inder max-w-[550px] text-justify">
+              {About.text}
+            </p>
+          ))}
         </article>
         <ul className="flex gap-10 items-center justify-start">
           {/*Informação de repositórios*/}
