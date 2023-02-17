@@ -5,6 +5,7 @@ import { projects } from "../../data/data";
 
 // Components
 import Slide from "./Slide/Slide";
+import ProjectDetails from "./ProjectDetails/ProjectDetails";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -12,11 +13,11 @@ const Projects = () => {
   //Observar após a página ser atualizado. Retornar sempre o primeiro projeto
   useEffect(() => {
     if (!selectedProject) {
-        setSelectedProject(projects[0]);
+      setSelectedProject(projects[0]);
     }
   }, [selectedProject, projects]);
 
-  console.log(selectedProject)
+  console.log(selectedProject);
 
   return (
     <section className="w-[100%] flex flex-col items-center justify-center py-[3em] border-[#ffffffa0] border-b-2">
@@ -25,12 +26,10 @@ const Projects = () => {
       </h2>
       <div className="w-[100%] flex flex-col items-center justify-center py-[2em]">
         <div className="w-100 flex items-center justify-center">
-            {/* Componente de detalhes do projeto*/}
-            {selectedProject && ( 
-            <div>
-                <p className="text-white">{selectedProject.title}</p>
-            </div>
-            )}
+          {/* Componente de detalhes do projeto*/}
+          {selectedProject && (
+            <ProjectDetails selectedProject={selectedProject} className="" />
+          )}
         </div>
         {/*Swiper slide para as opções de projetos*/}
         <Slide setSelectedProject={setSelectedProject} />

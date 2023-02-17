@@ -1,5 +1,5 @@
 // Icons
-import { FaLinkedin, FaGithubSquare, FaReact } from "react-icons/fa";
+import { FaLinkedin, FaGithubSquare, FaReact, FaCss3Alt } from "react-icons/fa";
 import { SiTailwindcss, SiFirebase } from "react-icons/si"
 
 // Images
@@ -96,6 +96,11 @@ export const projects = [
         id: 2,
         name: "React",
         icon: <FaReact/>,
+      },
+      {
+        id: 3,
+        name: "CSS",
+        icon: <FaCss3Alt/>,
       },
     ],
     logo: LogoLider,
